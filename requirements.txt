@@ -1,0 +1,10 @@
+rdflib>=7,<8
+PyLD>=2,<2.1
+jsonschema>=4.25.0,<5
+requests>=2.31.0
+git+https://github.com/eclipse-basyx/basyx-python-sdk.git@6bd05e54fbe6c78b30dd0926a37f8741a64d42ca
+oxigraph<1
+pytest
+dsms-sdk==4.1.1
+pydantic>=2.3,<=2.8.7
+git+https://github.com/mhrimaz/py-aas-rdf.git@main

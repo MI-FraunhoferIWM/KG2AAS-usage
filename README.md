@@ -25,14 +25,17 @@ The notebook uses a **fully sequential approach** (no abstractions, no functions
 
 ## 📁 Repository Structure
 
+```plaintext
+repo-name/
 ├── input/
-│ ├── mapping.sparql # SPARQL CONSTRUCT file for semantic transformation
+│   ├── mapping.sparql # SPARQL CONSTRUCT file for semantic transformation
 ├── output/
-│ └── ... # Generated AAS JSON files
-├──  KG2AAS_demo.ipynb # Main sequential demonstration notebook
-├──  .env_template # Environment variables required to access DSMS instance(HOST_URL, credentials, etc.)
-├──  requirements.txt # Python dependencies
-├──  README.md # Project documentation
+│   └── ... # Generated AAS JSON files
+├── KG2AAS_demo.ipynb # Main sequential demonstration notebook
+├── .env_template # Environment variables required to access DSMS instance(HOST_URL, credentials, etc.)
+├── requirements.txt # Python dependencies
+└── README.md # Project documentation
+```
 
 ## 🔧 Requirements
 
@@ -45,7 +48,7 @@ pip install -r requirements.txt
 
 Environment variables must be defined in a .env file in the working directory:
 
-```txt
+````plaintxt
 DSMS_HOST_URL=https://pmdx.materials-data.space/
 DSMS_USERNAME=<username>
 DSMS_PASSWORD=<password>

@@ -26,7 +26,7 @@ The notebook uses a **fully sequential approach** (no abstractions, no functions
 ## 📁 Repository Structure
 
 ```plaintext
-repo-name/
+KG2AAS-usage/
 ├── input/
 │   ├── mapping.sparql # SPARQL CONSTRUCT file for semantic transformation
 ├── output/

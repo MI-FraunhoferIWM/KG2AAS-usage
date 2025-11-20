@@ -2245,7 +2245,7 @@ CONSTRUCT {
                         ns1:index 0 ] ;
                 ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ModelReference> ;
                 ns1:index 0 ] ;
-        ns10:id ?kitem_iri ;
+        ns10:id "https://example.org/AAS" ;
         ns8:displayName [ a ns1:LangStringNameType ;
                 ns5:language "en" ;
                 ns5:text "Instance - Inspection Documents of Steel Products v1.0" ;

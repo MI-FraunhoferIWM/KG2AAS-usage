@@ -8,10 +8,10 @@
           "text": "Instance - Inspection Documents of Steel Products v1.0"
         }
       ],
-      "id": "https://materials-data.space/uid456/AAS",
+      "id": "https://pmdx.materials-data.space/8de5e175-ea5e-40c9-9ba9-62649720f898/AAS",
       "assetInformation": {
         "assetKind": "Instance",
-        "globalAssetId": "https://materials-data.space/uid456/AssetInfo",
+        "globalAssetId": "https://pmdx.materials-data.space/8de5e175-ea5e-40c9-9ba9-62649720f898/AssetInfo",
         "assetType": "Type",
         "defaultThumbnail": {
           "path": "/aasx/files/IDTA-02032-1-0_Submodel-Inspecon-Documents-of-Steel-Products-Title.png",
@@ -24,7 +24,7 @@
           "keys": [
             {
               "type": "Submodel",
-              "value": "https://materials-data.space/uid456/Submodel"
+              "value": "https://pmdx.materials-data.space/8de5e175-ea5e-40c9-9ba9-62649720f898/Submodel"
             }
           ]
         }
@@ -54,7 +54,7 @@
           "text": "Inspection Documents for Steel Products"
         }
       ],
-      "id": "https://materials-data.space/uid456/Submodel",
+      "id": "https://pmdx.materials-data.space/8de5e175-ea5e-40c9-9ba9-62649720f898/Submodel",
       "administration": {
         "version": "1",
         "revision": "0",

@@ -26,7 +26,7 @@ prefix ns7: <https://admin-shell.io/aas/3/0/EmbeddedDataSpecification/>
 prefix ns8: <https://admin-shell.io/aas/3/0/Referable/>
 prefix ns9: <https://admin-shell.io/aas/3/0/HasDataSpecification/>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX prov: <http://www.w3.org/ns/prov#>
+prefix prov: <http://www.w3.org/ns/prov#>
 
 CONSTRUCT {
 
@@ -702,6 +702,8 @@ CONSTRUCT {
                                 ns6:value "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0" ;
                                 ns1:index 0 ] ;
                         ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
+                ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/Float> ;
+                ns12:value ?carbon_proportion_string ;
                 ns7:dataSpecificationContent [ a ns1:DataSpecificationIec61360 ;
                         ns2:dataType <https://admin-shell.io/aas/3/0/DataTypeIec61360/REAL_MEASURE> ;
                         ns2:definition [ a ns1:LangStringDefinitionTypeIec61360 ;
@@ -1109,6 +1111,8 @@ CONSTRUCT {
                                 ns6:value "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0" ;
                                 ns1:index 0 ] ;
                         ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
+                ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/Float> ;
+                ns12:value ?silicon_proportion_string ;
                 ns7:dataSpecificationContent [ a ns1:DataSpecificationIec61360 ;
                         ns2:dataType <https://admin-shell.io/aas/3/0/DataTypeIec61360/REAL_MEASURE> ;
                         ns2:definition [ a ns1:LangStringDefinitionTypeIec61360 ;
@@ -4493,6 +4497,7 @@ CONSTRUCT {
                         ns1:index 0 ] ;
                 ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
         ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/String> ;
+        ns12:value ?manufacturer_order_number ;
         ns14:qualifiers [ a ns1:Qualifier ;
                 ns3:semanticId [ a ns1:Reference ;
                         ns4:keys [ a ns1:Key ;
@@ -4524,6 +4529,8 @@ CONSTRUCT {
                         ns1:index 0 ] ;
                 ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
         ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/Date> ;
+        ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/String> ;
+        ns12:value ?manufacturer_order_number ;
         ns14:qualifiers [ a ns1:Qualifier ;
                 ns3:semanticId [ a ns1:Reference ;
                         ns4:keys [ a ns1:Key ;
@@ -4555,6 +4562,7 @@ CONSTRUCT {
                         ns1:index 0 ] ;
                 ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
         ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/String> ;
+        ns12:value ?purchaser_order_number ;
         ns14:qualifiers [ a ns1:Qualifier ;
                 ns3:semanticId [ a ns1:Reference ;
                         ns4:keys [ a ns1:Key ;
@@ -4790,6 +4798,7 @@ CONSTRUCT {
                         ns1:index 0 ] ;
                 ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
         ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/String> ;
+        ns12:value ?manufacturer_product_number ;
         ns14:qualifiers [ a ns1:Qualifier ;
                 ns3:semanticId [ a ns1:Reference ;
                         ns4:keys [ a ns1:Key ;
@@ -4943,6 +4952,8 @@ CONSTRUCT {
                         ns6:value "0173-1#02-AAU734#002" ;
                         ns1:index 0 ] ;
                 ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
+        ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/String> ;
+        ns12:value ?product_description ;
         ns14:qualifiers [ a ns1:Qualifier ;
                 ns3:semanticId [ a ns1:Reference ;
                         ns4:keys [ a ns1:Key ;
@@ -4974,6 +4985,7 @@ CONSTRUCT {
                         ns1:index 0 ] ;
                 ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
         ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/String> ;
+        ns12:value ?purchase_article_number ;
         ns14:qualifiers [ a ns1:Qualifier ;
                 ns3:semanticId [ a ns1:Reference ;
                         ns4:keys [ a ns1:Key ;
@@ -6561,27 +6573,58 @@ CONSTRUCT {
 
 }
 WHERE {
-    ?properties a mapro:MechanicalTest ;
-        prov:wasDerivedFrom ?tensile_test, ?hardness_test .
-    
-    # Tensile test part
-    ?tensile_test a pmdco:PMD_0000974 ;
-        obo:OBI_0001938 ?yield_strength, ?tensile_strength .
-    
-    # Hardness test part
-    ?hardness_test a pmdco:PMD_0000776 ;
-        obo:OBI_0001938 ?hardness .
-    
-    ?yield_strength a tto:TTO_0000009 ;
-        qudt:value ?yield_strength_value .
 
-    ?tensile_strength a tto:TTO_0000053 ;
-        qudt:value ?tensile_strength_value . 
+    # Start from certificate
+    ?cert a mapro:SteelInspectionCertificate ;
+          obo:RO_0000057 ?container .
+    ?cert obo:RO_0000057 ?chemContainer .
+    ?cert obo:RO_0000057 ?product .
+    ?cert obo:RO_0000057 ?order .
 
-    ?hardness a pmdco:PMD_0000537 ;
-        qudt:value ?hardness_value .
+    # Mechanical test container
+    ?container a mapro:MechanicalTest ;
+               obo:OBI_0001938 ?tensileNode, ?yieldNode, ?hardnessNode .
+
+    # Tensile strength
+    ?tensileNode a tto:TTO_0000009 ;
+                 qudt:value ?tensile_strength .
+
+    # Yield strength
+    ?yieldNode a tto:TTO_0000053 ;
+               qudt:value ?yield_strength .
+
+    # Hardness
+    ?hardnessNode a pmdco:PMD_0000537 ;
+                  qudt:value ?hardness .
+
+    # Chemical composition container
+    ?chemContainer a pmdco:PMD_0020004 ;
+                    obo:OBI_0001938 ?CNode, ?SiNode .
+
+    # Map each element to its value
+    ?CNode a obo:CHEBI_27573 ;           # Carbon
+           qudt:value ?C .
+
+    ?SiNode a obo:CHEBI_27594 ;          # Silicon
+           qudt:value ?Si .
     
-    BIND(STR(?tensile_strength_value) AS ?tensile_strength_string)
-    BIND(STR(?yield_strength_value) AS ?yield_strength_string)
-    BIND(STR(?hardness_value) AS ?hardness_string)
+    # Product data
+    ?product a mapro:ProductData ;
+             prov:wasDerivedFrom ?order ;
+             mapro:HasManufacturerProductNumber ?manufacturer_product_number ;
+             mapro:HasProductDescription ?product_description ;
+             mapro:HasPurchaseArticleNumber ?purchase_article_number .
+
+    # Order data
+    ?order a mapro:OrderData ;
+           mapro:HasManufacturerOrderNumber ?manufacturer_order_number ;
+           mapro:HasPurchaserOrderNumber ?purchaser_order_number ;
+           mapro:HasOrderDate ?order_date .
+
+    BIND(STR(?tensile_strength) AS ?tensile_strength_string)
+    BIND(STR(?yield_strength) AS ?yield_strength_string)
+    BIND(STR(?hardness) AS ?hardness_string)
+
+    BIND(STR(?C) AS ?carbon_proportion_string)
+    BIND(STR(?Si) AS ?silicon_proportion_string)
 }

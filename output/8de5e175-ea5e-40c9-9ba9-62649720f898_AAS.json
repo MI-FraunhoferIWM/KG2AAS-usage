@@ -2171,6 +2171,7 @@
                 }
               ],
               "valueType": "xs:string",
+              "value": "ANSI/AMSE B16.5",
               "modelType": "Property"
             },
             {
@@ -2415,6 +2416,7 @@
                 }
               ],
               "valueType": "xs:string",
+              "value": "54321",
               "modelType": "Property"
             },
             {
@@ -2713,6 +2715,7 @@
                 }
               ],
               "valueType": "xs:string",
+              "value": "56357812",
               "modelType": "Property"
             },
             {
@@ -2753,7 +2756,8 @@
                   "text": "Auftragsdatum"
                 }
               ],
-              "valueType": "xs:date",
+              "valueType": "xs:string",
+              "value": "105532",
               "modelType": "Property"
             },
             {
@@ -2795,6 +2799,7 @@
                 }
               ],
               "valueType": "xs:string",
+              "value": "105532",
               "modelType": "Property"
             },
             {
@@ -4175,6 +4180,7 @@
                 }
               ],
               "valueType": "xs:string",
+              "value": "66763 ",
               "modelType": "Property"
             },
             {
@@ -4216,6 +4222,7 @@
                 }
               ],
               "valueType": "xs:string",
+              "value": "Werkstr. 1",
               "modelType": "Property"
             },
             {
@@ -4257,6 +4264,7 @@
                 }
               ],
               "valueType": "xs:string",
+              "value": "Germany",
               "modelType": "Property"
             },
             {
@@ -4339,6 +4347,7 @@
                 }
               ],
               "valueType": "xs:string",
+              "value": "Stahl Holding Saar",
               "modelType": "Property"
             },
             {
@@ -4380,6 +4389,7 @@
                 }
               ],
               "valueType": "xs:string",
+              "value": "Dillingen",
               "modelType": "Property"
             }
           ],
@@ -5519,6 +5529,7 @@
                 }
               ],
               "valueType": "xs:float",
+              "value": "0.2",
               "modelType": "Property"
             },
             {

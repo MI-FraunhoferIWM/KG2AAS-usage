@@ -2750,7 +2750,7 @@ CONSTRUCT {
                         ns1:index 0 ] ;
                 ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
         ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/Float> ;
-        ns12:value ?silicon_proportion_float ;
+        ns12:value ?carbon_proportion_string ;
         ns14:qualifiers [ a ns1:Qualifier ;
                 ns3:semanticId [ a ns1:Reference ;
                         ns4:keys [ a ns1:Key ;

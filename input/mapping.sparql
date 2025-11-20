@@ -27,6 +27,9 @@ prefix ns8: <https://admin-shell.io/aas/3/0/Referable/>
 prefix ns9: <https://admin-shell.io/aas/3/0/HasDataSpecification/>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix prov: <http://www.w3.org/ns/prov#>
+prefix vcard: <http://www.w3.org/2006/vcard/ns#>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 CONSTRUCT {
 
@@ -702,8 +705,7 @@ CONSTRUCT {
                                 ns6:value "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0" ;
                                 ns1:index 0 ] ;
                         ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
-                ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/Float> ;
-                ns12:value ?carbon_proportion_string ;
+                ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/Float> ;                
                 ns7:dataSpecificationContent [ a ns1:DataSpecificationIec61360 ;
                         ns2:dataType <https://admin-shell.io/aas/3/0/DataTypeIec61360/REAL_MEASURE> ;
                         ns2:definition [ a ns1:LangStringDefinitionTypeIec61360 ;
@@ -1112,7 +1114,6 @@ CONSTRUCT {
                                 ns1:index 0 ] ;
                         ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
                 ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/Float> ;
-                ns12:value ?silicon_proportion_string ;
                 ns7:dataSpecificationContent [ a ns1:DataSpecificationIec61360 ;
                         ns2:dataType <https://admin-shell.io/aas/3/0/DataTypeIec61360/REAL_MEASURE> ;
                         ns2:definition [ a ns1:LangStringDefinitionTypeIec61360 ;
@@ -2244,7 +2245,7 @@ CONSTRUCT {
                         ns1:index 0 ] ;
                 ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ModelReference> ;
                 ns1:index 0 ] ;
-        ns10:id "https://example.org/AAS" ;
+        ns10:id ?kitem_iri ;
         ns8:displayName [ a ns1:LangStringNameType ;
                 ns5:language "en" ;
                 ns5:text "Instance - Inspection Documents of Steel Products v1.0" ;
@@ -2344,7 +2345,7 @@ CONSTRUCT {
                         ns6:value "https://admin-shell.io/idta/InspectionDocumentsOfSteelProducts/MassFraction_Al/1/0" ;
                         ns1:index 0 ] ;
                 ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
-        ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/Float> ;
+        ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/Float> ;        
         ns14:qualifiers [ a ns1:Qualifier ;
                 ns3:semanticId [ a ns1:Reference ;
                         ns4:keys [ a ns1:Key ;
@@ -2407,6 +2408,7 @@ CONSTRUCT {
                         ns1:index 0 ] ;
                 ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
         ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/Float> ;
+        ns12:value ?carbon_proportion_string ;
         ns14:qualifiers [ a ns1:Qualifier ;
                 ns3:semanticId [ a ns1:Reference ;
                         ns4:keys [ a ns1:Key ;
@@ -2748,6 +2750,7 @@ CONSTRUCT {
                         ns1:index 0 ] ;
                 ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
         ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/Float> ;
+        ns12:value ?silicon_proportion_float ;
         ns14:qualifiers [ a ns1:Qualifier ;
                 ns3:semanticId [ a ns1:Reference ;
                         ns4:keys [ a ns1:Key ;
@@ -3277,6 +3280,7 @@ CONSTRUCT {
                         ns1:index 0 ] ;
                 ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
         ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/String> ;
+        ns12:value ?manufacturer_locality ;
         ns14:qualifiers [ a ns1:Qualifier ;
                 ns3:semanticId [ a ns1:Reference ;
                         ns4:keys [ a ns1:Key ;
@@ -3308,6 +3312,7 @@ CONSTRUCT {
                         ns1:index 0 ] ;
                 ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
         ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/String> ;
+        ns12:value ?manufacturer_organization_name ;
         ns14:qualifiers [ a ns1:Qualifier ;
                 ns3:semanticId [ a ns1:Reference ;
                         ns4:keys [ a ns1:Key ;
@@ -3370,6 +3375,7 @@ CONSTRUCT {
                         ns1:index 0 ] ;
                 ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
         ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/String> ;
+        ns12:value ?manufacturer_country ;
         ns14:qualifiers [ a ns1:Qualifier ;
                 ns3:semanticId [ a ns1:Reference ;
                         ns4:keys [ a ns1:Key ;
@@ -3401,6 +3407,7 @@ CONSTRUCT {
                         ns1:index 0 ] ;
                 ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
         ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/String> ;
+        ns12:value ?manufacturer_street_address ;
         ns14:qualifiers [ a ns1:Qualifier ;
                 ns3:semanticId [ a ns1:Reference ;
                         ns4:keys [ a ns1:Key ;
@@ -3432,6 +3439,7 @@ CONSTRUCT {
                         ns1:index 0 ] ;
                 ns4:type <https://admin-shell.io/aas/3/0/ReferenceTypes/ExternalReference> ] ;
         ns12:valueType <https://admin-shell.io/aas/3/0/DataTypeDefXsd/String> ;
+        ns12:value ?manufacturer_postal_code ;
         ns14:qualifiers [ a ns1:Qualifier ;
                 ns3:semanticId [ a ns1:Reference ;
                         ns4:keys [ a ns1:Key ;
@@ -6580,6 +6588,10 @@ WHERE {
     ?cert obo:RO_0000057 ?chemContainer .
     ?cert obo:RO_0000057 ?product .
     ?cert obo:RO_0000057 ?order .
+    ?cert prov:wasAttributedTo ?organization .
+    ?organization a foaf:Organization ;
+        rdfs:label ?manufacturer_organization_name ;
+        vcard:hasAddress ?manufacturer_address .
 
     # Mechanical test container
     ?container a mapro:MechanicalTest ;
@@ -6620,6 +6632,12 @@ WHERE {
            mapro:HasManufacturerOrderNumber ?manufacturer_order_number ;
            mapro:HasPurchaserOrderNumber ?purchaser_order_number ;
            mapro:HasOrderDate ?order_date .
+        
+    ?manufacturer_address a vcard:Address ;
+        vcard:country-name ?manufacturer_country ;
+        vcard:locality ?manufacturer_locality ;
+        vcard:postal-code ?manufacturer_postal_code ;
+        vcard:street-address ?manufacturer_street_address .
 
     BIND(STR(?tensile_strength) AS ?tensile_strength_string)
     BIND(STR(?yield_strength) AS ?yield_strength_string)
@@ -6627,4 +6645,6 @@ WHERE {
 
     BIND(STR(?C) AS ?carbon_proportion_string)
     BIND(STR(?Si) AS ?silicon_proportion_string)
+
+    BIND(STR(?cert) AS ?kitem_iri)
 }

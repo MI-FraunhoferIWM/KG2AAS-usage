@@ -8,7 +8,7 @@
           "text": "Instance - Inspection Documents of Steel Products v1.0"
         }
       ],
-      "id": "https://example.org/AAS",
+      "id": "https://pmdx.materials-data.space/knowledge/steel-inspection-certificate/inspection-certificate-saa105",
       "assetInformation": {
         "assetKind": "Instance",
         "globalAssetId": "https://example.org/AssetInfo",
@@ -4180,6 +4180,7 @@
                 }
               ],
               "valueType": "xs:string",
+              "value": "66763 ",
               "modelType": "Property"
             },
             {
@@ -4221,6 +4222,7 @@
                 }
               ],
               "valueType": "xs:string",
+              "value": "Werkstr. 1",
               "modelType": "Property"
             },
             {
@@ -4262,6 +4264,7 @@
                 }
               ],
               "valueType": "xs:string",
+              "value": "Germany",
               "modelType": "Property"
             },
             {
@@ -4344,6 +4347,7 @@
                 }
               ],
               "valueType": "xs:string",
+              "value": "Stahl Holding Saar",
               "modelType": "Property"
             },
             {
@@ -4385,6 +4389,7 @@
                 }
               ],
               "valueType": "xs:string",
+              "value": "Dillingen",
               "modelType": "Property"
             }
           ],
@@ -5524,6 +5529,7 @@
                 }
               ],
               "valueType": "xs:float",
+              "value": "0.2",
               "modelType": "Property"
             },
             {

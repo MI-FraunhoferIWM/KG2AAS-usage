@@ -5078,6 +5078,7 @@
                 }
               ],
               "valueType": "xs:float",
+              "value": "0.2",
               "modelType": "Property"
             },
             {
